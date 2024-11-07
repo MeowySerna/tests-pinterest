@@ -41,6 +41,30 @@
 - Установка зависимостей:
   ```bash
   npm install
+  ```
+1. Откройте файл `enums/enums.js` и добавьте необходимые константы для тестирования:
+   
+   - **VALID_EMAIL**: корректный email для позитивных тестов логина и регистрации.
+   - **VALID_PASSWORD**: корректный пароль.
+   - **BIRTHDATE_VALUE**: корректная дата рождения.
+   - **INVALID_EMAILS**: массив с некорректными email для негативных тестов.
+   - **INVALID_PASSWORDS**: массив с некорректными паролями.
+   - **INVALID_BIRTHDATES**: массив с некорректными датами рождения.
+
+2. В файле `utils/constants.js` укажите **VALID_URL**, который будет содержать ссылку на страницу аутентификации (`AUTH_URL`), необходимую для навигации в каждом тесте.
+
+Пример значений для `enums/enums.js`:
+
+```javascript
+module.exports = {
+  VALID_EMAIL: "user@example.com",
+  VALID_PASSWORD: "ValidPassword123!",
+  BIRTHDATE_VALUE: "1990-01-01",
+  INVALID_EMAILS: ["invalid-email", "user@.com", "user@domain"],
+  INVALID_PASSWORDS: ["123", "password", "12345"],
+  INVALID_BIRTHDATES: ["2025-01-01", "31-02-2000", ""]
+};
+```
 ## Команды для запуска тестов
 
 ### Запуск тестов регистрации
